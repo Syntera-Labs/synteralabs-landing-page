@@ -35,6 +35,11 @@
     font-weight: 700;
     margin-bottom: 0.5em;
   }
+
+  .logo img {
+    max-width: 150px;
+    height: auto;
+  }
   
   /* ==========================================================================
      2. HERO / HEADER
@@ -57,6 +62,11 @@
     margin-bottom: 1rem;
   }
   
+  .hero-logo img {
+    max-width: 200px;
+    height: auto;     /* maintains aspect ratio */
+  }
+
   .hero-section .subtext {
     font-size: 1.1rem;
     margin-bottom: 2rem;
