@@ -1,0 +1,224 @@
+/* ==========================================================================
+   1. GENERAL RESET / BASIC STYLES
+   ========================================================================== */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Roboto", sans-serif; /* Default body font */
+    line-height: 1.6;
+    color: #5a5a5a; /* Graphite Gray for text */
+    background-color: #f8fafc; /* Off-White background */
+  }
+  
+  /* Utility classes if needed */
+  .hidden {
+    display: none !important;
+  }
+  
+  /* Links */
+  a {
+    color: #4cc9f0; /* Teal for links */
+    text-decoration: none;
+  }
+  a:hover {
+    opacity: 0.8;
+  }
+  
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Montserrat", sans-serif;
+    color: #1d3557; /* Midnight Navy */
+    font-weight: 700;
+    margin-bottom: 0.5em;
+  }
+  
+  /* ==========================================================================
+     2. HERO / HEADER
+     ========================================================================== */
+  .hero-section {
+    background-color: #1d3557; /* Midnight Navy */
+    color: #ffffff;
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+  
+  .hero-section .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .hero-section h1 {
+    font-size: 2.5rem;
+    font-weight: 800; /* Extra bold for hero */
+    margin-bottom: 1rem;
+  }
+  
+  .hero-section .subtext {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    background-color: #00c9a7; /* Bright Turquoise for CTA */
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #00b098; /* Slightly darker turquoise */
+  }
+  
+  /* ==========================================================================
+     3. SECTION WRAPPERS
+     ========================================================================== */
+  .section-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+  }
+  
+  /* Generic section spacing */
+  section {
+    margin-bottom: 2rem;
+  }
+  
+  /* ==========================================================================
+     4. ABOUT SECTION
+     ========================================================================== */
+  .about-section p {
+    margin-bottom: 1rem;
+  }
+  .value-list li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* ==========================================================================
+     5. SERVICES SECTION
+     ========================================================================== */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .service-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .service-icon {
+    margin-bottom: 1rem;
+    /* Center the icon if you like:
+       text-align: center;
+    */
+  }
+  .service-card h3 {
+    margin-bottom: 0.75rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    color: #1d3557;
+  }
+  .service-card p {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+  }
+  
+  /* ==========================================================================
+     6. HOW WE WORK SECTION
+     ========================================================================== */
+  .how-we-work-section ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+  }
+  .how-we-work-section li {
+    margin-bottom: 0.75rem;
+  }
+  
+  /* ==========================================================================
+     7. CLIENT FOCUS
+     ========================================================================== */
+  .client-focus-section {
+    background-color: #ffffff;
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  /* ==========================================================================
+     8. CONTACT SECTION
+     ========================================================================== */
+  .contact-section {
+    text-align: center;
+  }
+  .contact-section a.cta-button {
+    margin: 2rem 0;
+  }
+  .contact-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .contact-form button {
+    background-color: #00c9a7;
+    color: #ffffff;
+    font-weight: 700;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* ==========================================================================
+     9. FOOTER
+     ========================================================================== */
+  .site-footer {
+    background-color: #1d3557;
+    color: #ffffff;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  
+  .footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  .footer-logo img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-links {
+    margin-bottom: 1rem;
+  }
+  
+  .footer-links a {
+    color: #ffffff;
+    margin: 0 0.5rem;
+  }
+  
+  .footer-disclaimer {
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+  
