@@ -8,12 +8,18 @@
   }
   
   body {
-    font-family: "Roboto", sans-serif; /* Default body font */
-    line-height: 1.6;
+    font-family: Roboto, sans-serif; /* Default body font */
+    line-height: 1.75;
     color: #5a5a5a; /* Graphite Gray for text */
     background-color: #f8fafc; /* Off-White background */
   }
   
+  main {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+  }
+
   /* Utility classes if needed */
   .hidden {
     display: none !important;
@@ -21,16 +27,23 @@
   
   /* Links */
   a {
-    color: #4cc9f0; /* Teal for links */
+    color: #00c9a7;
     text-decoration: none;
+    transition: color 0.2s ease;
   }
+
   a:hover {
-    opacity: 0.8;
+    color: #00b098;
   }
   
+  .cta-button.small {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+
   /* Headings */
   h1, h2, h3, h4, h5, h6 {
-    font-family: "Montserrat", sans-serif;
+    font-family: Montserrat, sans-serif;
     color: #1d3557; /* Midnight Navy */
     font-weight: 700;
     margin-bottom: 0.5em;
@@ -40,52 +53,127 @@
     max-width: 150px;
     height: auto;
   }
-  
+
+  section {
+    margin-bottom: 4rem;
+  }
+
   /* ==========================================================================
      2. HERO / HEADER
      ========================================================================== */
-  .hero-section {
-    background-color: #1d3557; /* Midnight Navy */
-    color: #ffffff;
+    .main-nav {
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        background-color: #fff;
+        padding: 1rem 0;
+        box-shadow: 0 2px 5px rgb(0 0 0 / 10%);
+    }
+    
+    .nav-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+    }
+    
+    .nav-links li a {
+        text-decoration: none;
+        color: #1d3557;
+        font-weight: 500;
+        transition: color 0.2s ease;
+    }
+    
+    .nav-links li a:hover {
+        color: #00b098; /* Slightly darker turquoise for hover */
+    }
+    
+    .nav-container .logo img {
+        max-width: 120px;
+        height: auto;
+    }
+      
+  /* ==========================================================================
+     2. HERO / HEADER
+     ========================================================================== */
+    .hero-section {
+    /* A subtle diagonal gradient from dark navy (#1D3557) to teal (#4CC9F0) */
+    background: linear-gradient(135deg, #1d3557 10%, #4cc9f0 100%);
+    color: #fff;
     padding: 4rem 1rem;
     text-align: center;
-  }
-  
-  .hero-section .hero-content {
+    position: relative; /* For optional overlay usage */
+    }
+    
+    /* Override the heading color for headings inside .hero-section */
+    .hero-section h1, 
+    .hero-section h2, 
+    .hero-section h3, 
+    .hero-section h4, 
+    .hero-section h5, 
+    .hero-section h6 {
+    color: #fff; 
+    }
+
+    /* Add slight shadow to text to ensure it stands out over the gradient */
+    .hero-section h1,
+    .hero-section .subtext {
+    text-shadow: 0 1px 2px rgb(0 0 0 / 40%);
+    }
+
+    /* If you want an optional overlay for extra contrast: 
+    This can be toggled on/off by adjusting opacity. */
+    .hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgb(0 0 0 / 30%); /* dark overlay at 30% */
+    z-index: 0; /* behind the text */
+    }
+
+    /* Then ensure your content is above the overlay */
+    .hero-content {
+    position: relative;
+    z-index: 1;
     max-width: 800px;
     margin: 0 auto;
-  }
-  
-  .hero-section h1 {
-    font-size: 2.5rem;
-    font-weight: 800; /* Extra bold for hero */
-    margin-bottom: 1rem;
-  }
-  
-  .hero-logo img {
-    max-width: 200px;
-    height: auto;     /* maintains aspect ratio */
-  }
+    }
 
-  .hero-section .subtext {
-    font-size: 1.1rem;
+    .hero-section h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    }
+
+    .hero-section .subtext {
+    font-size: 1.25rem;
     margin-bottom: 2rem;
-  }
-  
-  .cta-button {
+    }
+
+    /* CTA Button can stay turquoise or teal depending on preference */
+    .cta-button {
     display: inline-block;
-    background-color: #00c9a7; /* Bright Turquoise for CTA */
-    color: #ffffff;
+    background-color: #00c9a7; /* Bright Turquoise */
+    color: #fff;
     padding: 0.75rem 1.5rem;
     border-radius: 4px;
     font-weight: 700;
     transition: background-color 0.3s ease;
-  }
-  
-  .cta-button:hover {
+    text-decoration: none;
+    }
+
+    .cta-button:hover {
     background-color: #00b098; /* Slightly darker turquoise */
-  }
-  
+    }
+
   /* ==========================================================================
      3. SECTION WRAPPERS
      ========================================================================== */
@@ -106,6 +194,7 @@
   .about-section p {
     margin-bottom: 1rem;
   }
+
   .value-list li {
     margin-bottom: 0.5rem;
   }
@@ -121,25 +210,28 @@
   }
   
   .service-card {
-    background-color: #ffffff;
+    background-color: #fff;
     border: 1px solid #e0e0e0;
     border-radius: 6px;
     padding: 1.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 4px rgb(0 0 0 / 5%);
   }
   
   .service-icon {
     margin-bottom: 1rem;
+
     /* Center the icon if you like:
        text-align: center;
     */
   }
+
   .service-card h3 {
     margin-bottom: 0.75rem;
-    font-family: "Montserrat", sans-serif;
+    font-family: Montserrat, sans-serif;
     font-weight: 700;
     color: #1d3557;
   }
+
   .service-card p {
     margin-bottom: 0.5rem;
     line-height: 1.4;
@@ -152,6 +244,7 @@
     list-style: disc;
     padding-left: 1.5rem;
   }
+
   .how-we-work-section li {
     margin-bottom: 0.75rem;
   }
@@ -160,26 +253,62 @@
      7. CLIENT FOCUS
      ========================================================================== */
   .client-focus-section {
-    background-color: #ffffff;
-    border-top: 1px solid #dddddd;
-    border-bottom: 1px solid #dddddd;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
   }
-  
+
   /* ==========================================================================
-     8. CONTACT SECTION
+     8. TESTIMONIALS SECTION
+     ========================================================================== */
+     .testimonials-section {
+        background-color: #f0f7fa; /* Light background to differentiate */
+        padding: 3rem 1rem;
+      }
+      
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-gap: 2rem;
+        margin-top: 2rem;
+      }
+      
+      .testimonial-card {
+        background-color: #fff;
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 2px 4px rgb(0 0 0 / 5%);
+        border-radius: 6px;
+        padding: 1.5rem;
+      }
+      
+      .testimonial-quote {
+        font-style: italic;
+        margin-bottom: 1rem;
+      }
+      
+      .testimonial-author {
+        font-weight: 700;
+        color: #1d3557;
+      }
+      
+  /* ==========================================================================
+     9. CONTACT SECTION
      ========================================================================== */
   .contact-section {
     text-align: center;
   }
+
   .contact-section a.cta-button {
     margin: 2rem 0;
   }
+
   .contact-form {
     max-width: 600px;
     margin: 2rem auto;
     display: flex;
     flex-direction: column;
   }
+
   .contact-form input,
   .contact-form textarea {
     margin-bottom: 1rem;
@@ -187,9 +316,10 @@
     border: 1px solid #ccc;
     border-radius: 4px;
   }
+
   .contact-form button {
     background-color: #00c9a7;
-    color: #ffffff;
+    color: #fff;
     font-weight: 700;
     padding: 0.75rem;
     border: none;
@@ -198,11 +328,11 @@
   }
   
   /* ==========================================================================
-     9. FOOTER
+     10. FOOTER
      ========================================================================== */
   .site-footer {
     background-color: #1d3557;
-    color: #ffffff;
+    color: #fff;
     padding: 2rem 1rem;
     text-align: center;
   }
@@ -223,7 +353,7 @@
   }
   
   .footer-links a {
-    color: #ffffff;
+    color: #fff;
     margin: 0 0.5rem;
   }
   
